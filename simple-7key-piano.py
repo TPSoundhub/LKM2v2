@@ -11,7 +11,6 @@
 #
 #         - numpy
 #         - matplotlib
-#         - scipy
 #         - pygame 
 #
 #
@@ -25,13 +24,13 @@ from M2HEARlib import *
 
 
 frequency = [     # node and index/position in table/array
-440.00,           # A4 - pos 0
-493.88,           # B4 - pos 1
-523.25,           # C5 - pos 2
-587.33,           # D5 - pos 3
-659.25,           # E5 - pos 4
-698.46,           # F5 - pos 5
-783.99,           # G5 - pos 6
+440,           # A4 - pos 0
+494,           # B4 - pos 1
+523,           # C5 - pos 2
+587,           # D5 - pos 3
+659,           # E5 - pos 4
+698,           # F5 - pos 5
+784,           # G5 - pos 6
 ]
 
 def make_tones(freq):
