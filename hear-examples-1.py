@@ -1,0 +1,23 @@
+# hear-examples-1.py
+# -----------------------------------------------------------------
+# Programme that generates tones from sine waves - A basic version with limited amout of code lines for generating a sound.
+#
+# Revision 0.8 - 25 Nov 2020 - Knud Funch, Soundhub danmark - LYDKit til undervisningbrug - Region MidtJylland
+# To be used as material for test in Physics/Math class
+#
+# To be run from within Thonny IDE on both PC,MAC and/or Raspberry PI.
+#
+from M2HEARlib import *
+
+#---------------------------------------------------------------------------------------------------------------------------
+#  Build and play back sound sinals by simple modification of the below. Listen, measure, experiment and reflect..
+#
+
+sound_1 = generate_signal(440)           
+sound_2 = -sound_1
+sound_3 = sound_1+sound_2
+sound_4 = generate_signal(443)
+sound_5 = sound_1+sound_4
+
+play_signal(sound_1)                         
+           
