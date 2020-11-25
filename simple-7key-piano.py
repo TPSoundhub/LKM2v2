@@ -1,20 +1,11 @@
-# Tones on KB.py
+# simple-7key-piano.py
 #
 # Programme that generates tones from sine waves for frequencies corresponding to 7 tones A4 to G5.
 # Tones are then mapped to Keyboard keys A,S,D,F,G,H,J so it can be used as a very simple 'piano'.
 #
-# Revision 0.2 - 25 Nov 2020 - Knud Funch, Soundhub danmark - LYDKit til undevisningbrug - Region MidtJylland
+# Revision 0.3 - 25 Nov 2020 - Knud Funch, Soundhub danmark - LYDKit til undevisningbrug - Region MidtJylland
 #
 # To be run from within Thonny IDE on both PC and PI.
-# As precondition the following libraries needs to be included in IDE - That is to be installed via TOOLS/MANAGE PACKAGES
-# from within Thonny.
-#
-#         - numpy
-#         - matplotlib
-#         - pygame 
-#
-#
-# To generate sound (sine waves) and map them to Keyboard keys and play them pygame and numpy libraries are imported
 #
 # You must have focus in the small 'black' window to get keys into this program.
 #  
