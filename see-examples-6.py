@@ -19,7 +19,7 @@ from M2SEElib import *
 # Q - How does this relate to standing waves in tubes? Can you explain?
 #         
 
-bf = 440        
+bf = 880        
 ba = 8000
 
 f1  = generate_signal(bf,ba)          # fundamental
@@ -37,11 +37,22 @@ o11 = generate_signal(11*bf,1/11*ba)
 o12 = generate_signal(12*bf,1/12*ba)
 o13 = generate_signal(13*bf,1/13*ba)
 
-addall = f1+o2+o3+o4+o5+o6+o7+o8+o9+o10+o11+o12+o13  # saw
-addodd = f1+o3+o5+o7+o9+o11+o13                      # square
 
-plot_all=plot_signal(addall)
-plot_all.add_title("Alle overtoner")
-plot_odd=plot_signal(addodd)
-plot_odd.add_title("Ulige overtoner")
+all_overtones = [o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13]  # Saw
+
+sound = f1
+plot = plot_signal(f1)
+plot.add_title("Fundamental")
+play_signal(sound,forever=False)
+
+ot = 2
+
+for i in all_overtones:
+    plot.clear_curve()
+    sound=sound+i
+    plot.add_title("incl alle overtoner til overtone: "+str(ot))
+    plot.update(sound)
+    play_signal(sound,forever=False)    
+    ot=ot+1   
     
+ 

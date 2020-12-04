@@ -21,5 +21,8 @@ sound_4 = generate_signal(443)
 sound_5 = sound_1+sound_4
 
 plot_signal(sound_1)
-
+plot_signal(sound_2)
+plot_signal(sound_3)
+plot_signal(sound_4)
+plot_signal(sound_5,time_to_plot=1000)
 

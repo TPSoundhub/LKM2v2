@@ -18,13 +18,13 @@ from M2SEElib import *
 
 first_round = True
 for freq in range (400,4000,5):    # sidste parameter giver step størrelsen i frekvens
-    print(freq)
-    sound = generate_signal(freq,20000)
+    sound = generate_signal(freq,amp_max=20000)
     if first_round:
-        p1 = plot_signal(sound)
+        p1 = plot_signal(sound,amp_max=25000)
+        p1.add_freq_title(freq)
         first_round= False
     else:
         p1.update(sound)
-    time.sleep(1)                          # i sek.
-    p1.clear_curves()                      # skal være der ellers startes der hele tiden nye lyden ovnei hinanden og der er et max antal kanaler som kan køre samtidigt i mixer - uden bliver der 'sjove' effekter...
+        p1.add_freq_title(freq)
+    p1.clear_curve()                      
     
