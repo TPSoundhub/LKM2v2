@@ -5,7 +5,7 @@
 # Programme that generates tones from sine waves - A basic version with limited amout of code lines for generating a sound signal.
 #
 #
-# Version 0.8 - 25 november 2020 - Knud Funch, Soundhub danmark - LYDKit til undervisningbrug - Region MidtJylland
+# Version 0.9 - 04 november 2020 - Knud Funch, Soundhub danmark - LYDKit til undervisningbrug - Region MidtJylland
 # To be used as material for test in Physics/Math class
 #
 # As precondition the following libraries needs to be included in IDE - That is to be installed via TOOLS/MANAGE PACKAGES
@@ -56,6 +56,16 @@ def generate_signal(freq,amp_max=6000):
     signal_right = signal_left                                                           # same in both left and right channel in the stereo signal
     signal = np.array((signal_left,signal_right)).T.copy()
     return signal
+
+
+def generate_freq_modulated_signal(freq,amp_max=6000,mf=3):   # carrier og modulator og husk der kan være forskellig amp på de 2 også!!
+    t1 = np.linspace(0,DURATION*freq*2*np.pi,int(DURATION*SAMPLERATE),endpoint=False)
+    t2 = np.linspace(0,DURATION*mf*2*np.pi,int(DURATION*SAMPLERATE),endpoint=False)
+    signal_left = (np.sin(t1+np.sin(t2))*amp_max).astype(np.int16)   # mf as modulator freq 
+    signal_right = signal_left                                                           # same in both left and right channel in the stereo signal
+    signal = np.array((signal_left,signal_right)).T.copy()
+    return signal
+
 #
 # Function to make sound from signal and play it back in one of the channels available in pygame.mixer
 # Volume in left and right channel can be set in parameters. Default at max level (1). Can be muted by 0
